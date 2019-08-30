@@ -39,7 +39,7 @@
                       <tbody>
                         @foreach ($tabs['data'] as $order)
                           <tr>                      
-                            <td><a href="order_editor?order_id={{$order->id}}">Заказ №{{$order->id}}</a></td>
+                            <td><a href="add_order?order_id={{$order->id}}" target="_blank">Заказ №{{$order->id}}</a></td>
                             <td>{{$order->partner->name}}</td>
                             <td>{{$order->getPriceOrder()}}</td>
                             <td>

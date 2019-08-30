@@ -29,5 +29,5 @@ Route::get('weather', 'WeatherController@showTemperature');
 Route::get('orders','Orders\OrdersController@getListOrders');
 
 //Редактирование заказа
-Route::get('order_editor','OrderController@showOrder');
-Route::post('order_editor','OrderController@saveOrder');
+Route::get('add_order','Orders\AddOrderController@showOrder');
+Route::post('add_order','Orders\AddOrderController@saveOrder');
