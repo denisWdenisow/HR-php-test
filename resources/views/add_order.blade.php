@@ -68,10 +68,12 @@
 				          				</tr>
 		          					@endforeach
 		          				@endif
-		          			</tbody>	          				
+		          			</tbody>
 	          			</table>
 	          		</div>
-	          		
+	          		<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	          			<button class="btn btn-default">Добавить продукт</button>
+	          		</div>
 	  			</div>
 	  			
 	  			@if ($errors->any())
