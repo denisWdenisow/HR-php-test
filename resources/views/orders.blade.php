@@ -1,7 +1,7 @@
 @extends('layouts.header')
 
 @section('title')
-	<title>Список всех заказов</title>
+	<title>Список заказов</title>
 @endsection
 
 @include('layouts.top_menu')
@@ -54,14 +54,8 @@
                     </table>
                   </div>
                 @endforeach
-
-                
-
-				
-				
             </div>
         </div>
-    </div>
-        
+    </div>        
 
 @endsection

@@ -16,17 +16,26 @@
             <div class="panel panel-default col-xs-12 col-sm-12 col-md-12 col-lg-12">
             
                 <div class="panel-heading">                	
-                	<label class="panel-title">{{isset($order_info->id) ? '№ заказа '.$order_info->id : 'Новый заказ'}}</label>
+                	<label class="panel-title">{{isset($order_info->id) ? 'Заказ №'.$order_info->id.',  дата доставки '.date("d.m.Y H:i:s", strtotime($order_info->delivery_dt)) : 'Новый заказ'}}</label>
                 </div>
                 
                 <div class="panel-body">
                 
-	    			<div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                	<div class="form-group col-xs-12 col-sm-12 col-md-2 col-lg-2">
+            			<label>Дата:</label>
+            			<input form="post_form" class="form-control" type="date" name="delivery_d" value="{{isset($order_info->delivery_dt) ? date('Y-m-d', strtotime($order_info->delivery_dt)) : (old('delivery_d') ?? date('Y-m-d'))}}" >
+          			</div>
+          			<div class="form-group col-xs-12 col-sm-12 col-md-2 col-lg-2">
+            			<label>Время:</label>
+            			<input form="post_form" class="form-control" type="time" name="delivery_t" value="{{isset($order_info->delivery_dt) ? date('H:i', strtotime($order_info->delivery_dt)) : (old('delivery_t') ?? date('H:i'))}}" >
+          			</div>
+          			
+	    			<div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
             			<label>E-mail клиента:</label>
             			<input form="post_form" class="form-control" type="email" name="client_mail" value="{{$order_info->client_email ?? old('client_mail')}}" >
           			</div>
           			
-          			<div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          			<div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
 		                <label>Партнер:</label>
 		                <select form="post_form" class="form-control" name="partner" >
 		                	<option value="0">Выбор партнера</option>
@@ -38,7 +47,7 @@
 		                </select>
           			</div>
           			
-          			<div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          			<div class="form-group col-xs-12 col-sm-12 col-md-2 col-lg-2">
 		                <label>Статус:</label>
 		                <select form="post_form" class="form-control" name="status" >
 		                	<option {{isset($order_info->status) && $order_info->status == 0 ? 'selected=selected' : ''}} value="0">новый</option>
@@ -46,8 +55,6 @@
 		                	<option {{isset($order_info->status) && $order_info->status == 20 ? 'selected=selected' : ''}} value="20">завершен</option>
 		                </select>
           			</div>
-          			
-          			<div class="row"></div>
           			
           			<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	          			<table class="table">

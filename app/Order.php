@@ -11,7 +11,9 @@ class Order extends Model
     	'status',
     	'client_email',
     	'partner_id',
-    	'delivery_dt'
+    	'delivery_dt',
+    	'created_at',
+    	'updated_at'
 	];
 	
 	// Связь с продуктами в заказе
