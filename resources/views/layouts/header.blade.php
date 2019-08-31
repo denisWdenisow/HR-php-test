@@ -11,7 +11,8 @@
         <link rel="stylesheet" href="css/app.css">
   		<link rel="stylesheet" href="css/style.css">
   	
-        
+        <!-- CSRF Token -->
+    	<meta name="csrf-token" content="{{ csrf_token() }}">
         
     </head>
     <body>
@@ -22,5 +23,8 @@
         <script src="js/app.js"></script>
         <!-- script.js -->
         <script src="js/script.js"></script>
+        
+        @yield('scripts')
+                
     </body>
 </html>

@@ -1,18 +1,18 @@
 @extends('layouts.header')
 
 @section('title')
-	<title>Погода в Брянске</title>
+	<title>Текущая температура в Брянске</title>
 @endsection
 
-@include('layouts.top_menu')
-
 @section('content')
+
+	@include('layouts.top_menu')
     
     <div class="flex-center full-height">
     
         <div class="content">
             <div class="title m-b-md">
-                Текущая температура в Брянске
+                Температура в Брянске
             </div>
             <div class="title m-b-md">
             	{{$temperature}} &deg;C

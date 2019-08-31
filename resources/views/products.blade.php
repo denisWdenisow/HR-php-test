@@ -1,12 +1,12 @@
 @extends('layouts.header')
 
 @section('title')
-	<title>Список заказов</title>
+	<title>Продукты</title>
 @endsection
 
-@include('layouts.top_menu')
-
 @section('content')
+	
+	@include('layouts.top_menu')
     
     <div class="row">
   		<div class="container">
@@ -23,10 +23,18 @@
 	              <tbody>
 	                @foreach ($product_list as $product)
 	                  <tr>                      
-	                    <td>{{$product->id}}</a></td>
+	                    <td>{{$product->id}}</td>
 	                    <td>{{$product->name}}</td>
 	                    <td>{{$product->vendor->name}}</td>
-	                    <td><input type="number" class="form-control product_price" value="{{$product->price}}" step="any" min="0"/></td>	                                           
+	                    <td>
+	                    	<input 
+	                    		type="number" 
+	                    		class="form-control product_price" 
+	                    		value="{{$product->price}}" 
+	                    		data-product_id="{{$product->id}}" 
+	                    		step="any" 
+	                    		min="0"/>
+	                    </td>	                                           
 	                  </tr>
 	                @endforeach
 	              </tbody>
@@ -34,6 +42,6 @@
 	            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{$product_list->links()}}</div>
             </div>
         </div>
-    </div>        
+    </div>     
 
 @endsection

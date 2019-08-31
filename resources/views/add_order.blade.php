@@ -4,9 +4,9 @@
 	<title>Редактирование заказа</title>
 @endsection
 
-@include('layouts.top_menu')
-
 @section('content')
+
+	@include('layouts.top_menu')
     
     <div class="row">
   		<div class="container">
