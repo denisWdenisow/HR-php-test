@@ -7,12 +7,15 @@
       		<a href="weather" class="btn btn-default navbar-btn">
       			Температура в Брянске
       		</a>
-          <a href="add_order" class="btn btn-default navbar-btn">
-            Новый заказ
-          </a>
-    			<a href="orders" class="btn btn-default navbar-btn">
-    				Список заказов
-    			</a>
+          	<a href="add_order" class="btn btn-default navbar-btn">
+            	Новый заказ
+          	</a>
+    		<a href="orders" class="btn btn-default navbar-btn">
+    			Список заказов
+    		</a>
+    		<a href="products" class="btn btn-default navbar-btn">
+    			Список продуктов
+    		</a>
     </div>
   </div>
 </nav>

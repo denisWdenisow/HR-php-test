@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Очистка
 Route::get('/clearCache', function() {
     Artisan::call('cache:clear');
     Artisan::call('config:cache');
@@ -18,6 +20,7 @@ Route::get('/clearCache', function() {
     return "Кэш очищен.";
 });
 
+// Главная 
 Route::get('/', function () {
     return view('welcome');
 });
@@ -25,9 +28,11 @@ Route::get('/', function () {
 // Текущая температура в Брянске
 Route::get('weather', 'WeatherController@showTemperature');
 
-// Список заказов
-Route::get('orders','Orders\OrdersController@getListOrders');
+// Заказы
+Route::get('orders', 'Orders\OrdersController@getListOrders');
+// Редактирование заказа
+Route::get('add_order', 'Orders\AddOrderController@showOrder');
+Route::post('add_order', 'Orders\AddOrderController@saveOrder');
 
-//Редактирование заказа
-Route::get('add_order','Orders\AddOrderController@showOrder');
-Route::post('add_order','Orders\AddOrderController@saveOrder');
+// Продукты
+Route::get('products', 'Products\ProductsController@getListProducts');
