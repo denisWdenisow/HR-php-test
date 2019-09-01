@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Order;
 use App\Partner;
+use App\Http\Controllers\MailController;
 
 class AddOrderController extends Controller
 {
@@ -37,6 +38,10 @@ class AddOrderController extends Controller
 	       		['id' => $request->order_id],
 	       		$data
 	       	);
+	       	if ($order->status == 20){
+				$mes = new MailController;
+				$mes->prepareSendingEmails($order->id);
+			}	       	
 	       	return redirect('add_order?order_id='.$order->id);
 	    }
 	    catch(\Exception $e){
