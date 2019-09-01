@@ -23,11 +23,11 @@
                 
                 	<div class="form-group col-xs-12 col-sm-12 col-md-2 col-lg-2">
             			<label>Дата:</label>
-            			<input form="post_form" class="form-control" type="date" name="delivery_d" value="{{isset($order_info->delivery_dt) ? date('Y-m-d', strtotime($order_info->delivery_dt)) : (old('delivery_d') ?? date('Y-m-d'))}}" >
+            			<input form="post_form" class="form-control" type="date" name="delivery_d" value="{{isset($order_info->delivery_dt) ? date('Y-m-d', strtotime($order_info->delivery_dt)) : (old('delivery_d') ?? date('Y-m-d', strtotime('+1 day')))}}" >
           			</div>
           			<div class="form-group col-xs-12 col-sm-12 col-md-2 col-lg-2">
             			<label>Время:</label>
-            			<input form="post_form" class="form-control" type="time" name="delivery_t" value="{{isset($order_info->delivery_dt) ? date('H:i', strtotime($order_info->delivery_dt)) : (old('delivery_t') ?? date('H:i'))}}" >
+            			<input form="post_form" class="form-control" type="time" name="delivery_t" value="{{isset($order_info->delivery_dt) ? date('H:i', strtotime($order_info->delivery_dt)) : (old('delivery_t') ?? date('H:i:s'))}}" >
           			</div>
           			
 	    			<div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">

@@ -14,10 +14,10 @@
 	            <table class="table">
 	              <thead>
 	                <tr>
-	                    <th width="10%">ид продукта</th>
-	                    <th width="35">наименование продукта</th>
-	                    <th width="40%">наименование поставщика</th>
-	                    <th width="15%">цена</th>
+	                    <th width="10%">ИД продукта</th>
+	                    <th width="35">Наименование продукта</th>
+	                    <th width="40%">Наименование поставщика</th>
+	                    <th width="15%">Цена</th>
 	                </tr>
 	              </thead>
 	              <tbody>

@@ -11,15 +11,6 @@
 |
 */
 
-// Очистка
-Route::get('/clearCache', function() {
-    Artisan::call('cache:clear');
-    Artisan::call('config:cache');
-    Artisan::call('view:clear');
-	Artisan::call('route:clear');
-    return view('welcome');
-});
-
 // Главная 
 Route::get('/', function () {
     return view('welcome');

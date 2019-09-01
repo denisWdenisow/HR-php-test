@@ -12,7 +12,7 @@ class OrdersController extends Controller
 	{
 		return view('orders',['nav_tabs' =>array(
 		    [
-		    	'name' 	=> 'просроченные',
+		    	'name' 	=> 'Просроченные',
 				'id'	=> 'overdue',
 				'active'=> 'active',
 				'data'	=> Order::where('status',10)
@@ -22,7 +22,7 @@ class OrdersController extends Controller
 					->get()
 		 	],
 		 	[
-		    	'name' 	=> 'текущие',
+		    	'name' 	=> 'Текущие',
 				'id'	=> 'current',
 				'active'=> '',
 				'data'	=> Order::where('status',10)
@@ -32,7 +32,7 @@ class OrdersController extends Controller
 					->get()
 		    ],
 		    [
-		    	'name' 	=> 'новые',
+		    	'name' 	=> 'Новые',
 				'id'	=> 'new_order',
 				'active'=> '',
 				'data'	=> Order::where('status',0)
@@ -42,7 +42,7 @@ class OrdersController extends Controller
 					->get()
 		    ],
 		    [
-		    	'name' 	=> 'выполненные',
+		    	'name' 	=> 'Выполненные',
 				'id'	=> 'done_order',
 				'active'=> '',
 				'data'	=> Order::where('status',20)
